@@ -2,6 +2,9 @@
 
 TODO: Paper link.
 
+### What kind of code repository is this?
+This repo is an archival collection of code files that were used to produce the examples in our paper. For now, this code is intended to be run manually in the playground settings described below. However, as next steps, we believe our framework naturally suggests many kinds of concrete implementations that function end-to-end as natural dialogue systems capable of complex, probabilistic reasoning.
+
 # Framework overview
 
 - **Meaning function** <img src="assets/nn_icon.png" width=20px>: Translates from natural language to code expressions.
