@@ -2,13 +2,16 @@
 
 TODO: Paper link.
 
-### What kind of code repository is this?
+### Abstract
+
+### What code is included in this repository?
 This repo is an archival collection of code files that were used to generate the examples in our paper. For now, this code is intended to be run manually in the playground settings described below. However, as next steps, we believe our framework naturally suggests many kinds of concrete implementations that function end-to-end as natural dialogue systems capable of complex, probabilistic reasoning.
 
 # Framework overview
 
-- **Meaning function** <img src="assets/nn_icon.png" width=20px>: Translates from natural language to code expressions.
-- **Inference function** <img src="assets/cogs_icon.png" width=20px>: Runs probabilistic inference over possible worlds described by a generative model.
+<img src="assets/nn_icon.png" width=20px> **Meaning function**: Context-sensitive mapping from natural language to code expressions.
+
+<img src="assets/cogs_icon.png" width=20px> **Inference function**: Sample-based probabilistic inference engine over possible worlds described by a generative model.
 
 ## Experimenting with a meaning function
 
@@ -16,7 +19,7 @@ For the examples we present in our paper, we use OpenAI's Codex model to play th
 
 ## Experimenting with an inference function
 
-In our paper, we used a probabilistic programming languguage called [Church](https://v1.probmods.org) to play the role of the inference function. Everywhere that a <img src="assets/cogs_icon.png" width=20px> symbol appears indicates a  computation that was performed with Church's probabilistic inference engine. TO reproduce these inferences, you can use the [Church Play Space](https://v1.probmods.org/play-space.html). For each domain, the `world-model.scm` file contains generative model in Church that can be pasted directly into the editor.
+In our paper, we used a probabilistic programming languguage called [Church](https://v1.probmods.org) to play the role of the inference function. Everywhere that a <img src="assets/cogs_icon.png" width=20px> symbol appears indicates a  computation that was performed with Church's probabilistic inference engine. To reproduce these inferences, you can use the [Church Play Space](https://v1.probmods.org/play-space.html). For each domain, the `world-model.scm` file contains generative model in Church that can be pasted directly into the editor.
 
 # Domains
 
