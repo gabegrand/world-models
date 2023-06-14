@@ -20,9 +20,33 @@ In our paper, we used a probabilistic programming languguage called [Church](htt
 
 # Domains
 
+![fig-splash-v2](https://github.com/gabegrand/world-models/assets/10052880/71d30fc4-d728-4016-8b33-9851b13d0c77)
+
 ## Probabilistic reasoning
 
-TODO
+As an introductory example, we consider the Bayesian Tug-of-War (Gerstenberg & Goodman, 2012; Goodman et al., 2014). We start with a generative model of a tournament in which players of varying strengths compete in a series of matches as part of fluid teams. Each player has a latent strength value randomly sampled from a Gaussian distribution (with parameters arbitrarily chosen as μ = 50 and σ = 20). As an observer, our goal is to infer the latent strength of each individual based on their win/loss record. However, players sometimes don’t pull at their full strength and each player has a different intrinsic “laziness” value (uniformly sampled from the interval [0, 1]) that describes how likely they are to be lethargic in a given match.
+
+As a simple example, suppose we observe two matches. In the first match, Tom won against John. In the second match, John and Mary won against Tom and Sue. We can encode both of these observations as the following Church conditioning statement.
+
+```
+(condition
+  (and
+    ;; Condition: Tom won against John.
+    (won-against '(tom) '(john))
+    ;; Condition: John and Mary won against Tom and Sue.
+    (won-against '(john mary) '(tom sue))))
+```
+
+Based on the fact that Tom won against John, we might expect Tom to be stronger than John. Therefore, the fact that John and Mary won against Tom and Sue suggests that Mary's strength is above average. We can replicate this probabilistic inference with the following Church query:
+
+```
+;; Query: How strong is Mary?
+(strength 'mary)
+```
+
+<img width="600px" alt="mary-strength" src="https://github.com/gabegrand/world-models/assets/10052880/73cd736e-959c-4d20-a58d-0aabaef221e3">
+
+This is just a simple example of the kinds of probabilistic inferences we can make in the Bayesian tug-of-war. In our paper, we consider more complex observations (e.g., "Josh has a propensity to slack off") and inferences (e.g., "Is Gabe stronger than the weakest player on the faculty team?"), before scaling up to new domains of reasoning.
 
 ## Relational reasoning
 
