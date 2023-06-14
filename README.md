@@ -50,7 +50,9 @@ This is just a simple example of the kinds of probabilistic inferences we can ma
 
 ## Relational reasoning
 
-TODO
+Next, we consider _relational reasoning_ characteristic of "good old fashioned" AI systems like Prolog. Our domain of interest is **kinship**: tree-structured relationships between people in a family. Our world model is a generative model over family trees, and our conditioning and query statements are propositions about relations between people (e.g., "Charlie is the grandfather of Dana"). Through the examples in our paper, we illustrate how our approach of translating from natural language to the probabilistic language-of-thought fluidly integrates both exact (logical) and fuzzy (probabilistic) reasoning in a way that comes naturally to people, but that has so far proven elusive for both traditional deductive programming systems and purely statistical language models.
+
+<img width="100%" alt="relational reasoning figure" src="https://github.com/gabegrand/world-models/assets/10052880/0ff38e1d-23d0-4c6c-8563-6c3757912742">
 
 ## Grounded visual reasoning
 
