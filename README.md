@@ -50,13 +50,23 @@ This is just a simple example of the kinds of probabilistic inferences we can ma
 
 ## Relational reasoning
 
-Next, we consider _relational reasoning_ characteristic of "good old fashioned" AI systems like Prolog. Our domain of interest is **kinship**: tree-structured relationships between people in a family. Our world model is a generative model over family trees, and our conditioning and query statements are propositions about relations between people (e.g., "Charlie is the grandfather of Dana"). Through the examples in our paper, we illustrate how our approach of translating from natural language to the probabilistic language-of-thought fluidly integrates both exact (logical) and fuzzy (probabilistic) reasoning in a way that comes naturally to people, but that has so far proven elusive for both traditional deductive programming systems and purely statistical language models.
+Next, we consider _relational reasoning_ characteristic of "good old fashioned" AI systems like Prolog. Our domain of interest is **kinship**: tree-structured relationships between people in a family. Our world model is a probabilistic generative model over family trees, and our conditioning and query statements are propositions about relations between people (e.g., "Charlie is the grandfather of Dana"). Through the examples in our paper, we illustrate how our approach of translating from natural language to the probabilistic language-of-thought fluidly integrates both exact (logical) and fuzzy (probabilistic) reasoning in a way that comes naturally to people, but that has so far proven elusive for both traditional deductive programming systems and purely statistical language models.
 
 <img width="100%" alt="relational reasoning figure" src="https://github.com/gabegrand/world-models/assets/10052880/0ff38e1d-23d0-4c6c-8563-6c3757912742">
 
 ## Grounded visual reasoning
 
-TODO
+How can we so flexibly relate language to our more general perceptual and physical reasoning? By incorporating external graphics and physics engines, these sections blueprint how computational models that ground linguistic meaning in a probabilistic language-of-thought can interface with other cognitive modules for perception and physical reasoning.
+
+### Static scenes
+In [static-scenes](domains/d3-grounded-visual-reasoning/static-scenes), we extend our framework to integrate a graphics rendering engine to relate linguistic meanings to visual knowledge. Our world model is a probabilistic generative model over objects on a tabletop. Conditioning statements convey information about the type, color, number, and other properties of these objects; queries are questions about the contents of the scene (e.g., "Are there more red objects or green ones?").
+
+<img width="100%" alt="grounded visual reasoning figure" src="https://github.com/gabegrand/world-models/assets/10052880/b0cada6a-70ea-42f8-a0dd-91d16d554866">
+
+### Dynamic scenes
+Next, in [dynamic-scenes](domains/d3-grounded-visual-reasoning/dynamic-scenes), we integrate a physics simulation engine to further interface between language and intuitive, probabilistic physical reasoning. We extend our tabletop world model to include information about object masses and velocities. Based on the initial world state, we iteratively run a simple Newtonian dynamics model to compute a timeseries of trajectories. Conditioning statements encode information about both initial world states (e.g., "The red ball is pretty heavy") and events (e.g., "The red ball hits the blue one"). Queries invoke inferences about these world states (e.g., "How fast does the blue ball move after the collision?").
+
+<img width="100%" alt="grounded visual reasoning figure" src="https://github.com/gabegrand/world-models/assets/10052880/249b73c4-d0ac-4a16-92af-6ebcbd5c3745">
 
 ## Goal-directed reasoning
 
