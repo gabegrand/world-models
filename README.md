@@ -1,5 +1,7 @@
 # From Word Models to World Models: Translating from Natural Language to the Probabilistic Language of Thought
 
+Full paper: https://arxiv.org/abs/2306.12672
+
 ### Abstract
 
 How does language inform our downstream thinking? In particular, how do humans make meaning from language — and how can we leverage a theory of linguistic meaning to build machines that think in more human-like ways?
