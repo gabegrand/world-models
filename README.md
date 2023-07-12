@@ -31,6 +31,9 @@ In our paper, we used a probabilistic programming languguage called [Church](htt
 <img width="100%" alt="Splash figure" src="assets/fig-splash.png">
 
 ## Probabilistic reasoning
+
+Code: [[Domain 1] Probabilistic reasoning](domains/d1-probabilistic-reasoning)
+
 As an introductory example, we consider the Bayesian Tug-of-War (Gerstenberg & Goodman, 2012; Goodman et al., 2014). We start with a generative model of a tournament in which players of varying strengths compete in a series of matches as part of fluid teams. Each player has a latent strength value randomly sampled from a Gaussian distribution (with parameters arbitrarily chosen as μ = 50 and σ = 20). As an observer, our goal is to infer the latent strength of each individual based on their win/loss record. However, players sometimes don’t pull at their full strength and each player has a different intrinsic “laziness” value (uniformly sampled from the interval [0, 1]) that describes how likely they are to be lethargic in a given match.
 
 As a simple example, suppose we observe two matches. In the first match, Tom won against John. In the second match, John and Mary won against Tom and Sue. We can encode both of these observations as the following Church conditioning statement.
@@ -56,11 +59,17 @@ Based on the fact that Tom won against John, we might expect Tom to be stronger 
 This is just a simple example of the kinds of probabilistic inferences we can make in the Bayesian tug-of-war. In our paper, we consider more complex observations (e.g., "Josh has a propensity to slack off") and inferences (e.g., "Is Gabe stronger than the weakest player on the faculty team?"), before scaling up to new domains of reasoning.
 
 ## Relational reasoning
+
+Code: [[Domain 2] Relational reasoning](domains/d2-relational-reasoning)
+
 Next, we consider _relational reasoning_ characteristic of "good old fashioned" AI systems like Prolog. Our domain of interest is **kinship**: tree-structured relationships between people in a family. Our world model is a probabilistic generative model over family trees, and our conditioning and query statements are propositions about relations between people (e.g., "Charlie is the grandfather of Dana"). Through the examples in our paper, we illustrate how our approach of translating from natural language to the probabilistic language-of-thought fluidly integrates both exact (logical) and fuzzy (probabilistic) reasoning in a way that comes naturally to people, but that has so far proven elusive for both traditional deductive programming systems and purely statistical language models.
 
 <img width="100%" alt="Relational reasoning figure" src="assets/fig-relational.png">
 
 ## Grounded visual reasoning
+
+Code: [[Domain 3] Grounded visual reasoning](domains/d3-grounded-visual-reasoning)
+
 How can we flexibly relate language to our more general perceptual and physical reasoning? By incorporating external graphics and physics engines, these sections blueprint how computational models that ground linguistic meaning in a probabilistic language-of-thought can interface with other cognitive modules for perception and physical reasoning.
 
 ### Static scenes
@@ -74,6 +83,9 @@ Next, in [dynamic-scenes](domains/d3-grounded-visual-reasoning/dynamic-scenes), 
 <img width="100%" alt="Dynamic scenes figure" src="assets/fig-scenes-dynamic.png">
 
 ## Goal-directed reasoning
+
+Code: [[Domain 4] Goal-directed reasoning reasoning](domains/d4-goal-directed-reasoning)
+
 In our final example, we explore language about other social beings – agents who want things, chase goals, and plan how to act in the world around them. We consider a gridworld domain based on C. L. Baker, Tenenbaum, and Saxe (2007) involving agents with different preferences and goals who are making lunch plans. We extend our framework to include a _model-based planner_ that supports inferences about agents' actions (e.g., "Lio loves sushi but hates pizza; where do you think they will go?"). We also illustrate how our probabilistic framing supports _inverse planning_: making inferences about agents' value functions and the state of the world, given observed actions (e.g., "Gabe was just biking East on Barlow Street; do you think the pizza place is open? Do you think he likes pizza?"). All of these inferences fall out of the same underlying generative model, which unifies these distinct observations about people and the world in language with respect to a formal model of how agents tend to behave.
 
 <img width="100%" alt="Goal-directed reasoning figure" src="assets/fig-agents-plans.png">
