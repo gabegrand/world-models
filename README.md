@@ -51,7 +51,7 @@ Based on the fact that Tom won against John, we might expect Tom to be stronger 
 (strength 'mary)
 ```
 
-<img width="600px" alt="mary-strength" src="assets/mary-strength.png">
+<img width="600px" alt="mary-strength" src="assets/fig-mary-strength.png">
 
 This is just a simple example of the kinds of probabilistic inferences we can make in the Bayesian tug-of-war. In our paper, we consider more complex observations (e.g., "Josh has a propensity to slack off") and inferences (e.g., "Is Gabe stronger than the weakest player on the faculty team?"), before scaling up to new domains of reasoning.
 
