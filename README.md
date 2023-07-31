@@ -20,7 +20,7 @@ This repo is an archival collection of code files that were used to generate the
 
 ## Experimenting with a meaning function
 
-For the examples we present in our paper, we use OpenAI's Codex model to play the role of the meaning function. Everywhere that a <img src="assets/icon-nn.png" width=20px> symbol appears indicates a translation produced by Codex. To reproduce these translations, you can use the [OpenAI Playground](https://platform.openai.com/playground) (account required to access) or the [ChatGPT interface](https://chat.openai.com/). For each domain, the `prompt.scm` file contains the text that was used for prompting.
+For the examples we present in our paper, we use OpenAI's Codex model to play the role of the meaning function. Everywhere that a <img src="assets/icon-nn.png" width=20px> symbol appears indicates a translation produced by Codex. To reproduce these translations, you can use the [OpenAI Playground](https://platform.openai.com/playground) (account required to access) or the [ChatGPT interface](https://chat.openai.com/). For each domain, the `prompt.scm` file contains the text that was used for prompting. Note that while these translations contain fragments of Church code, they are not executable without the rest of the world model; instead, `condition` and `query` statements from these files can be added to the relevant sections of each `world-model.scm` file detailed below.
 
 ## Experimenting with an inference function
 
